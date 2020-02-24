@@ -1,0 +1,26 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run a one-line script
+      run: echo Hello, world!
+    - name: Run a multi-line script
+      run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.
+- name: Private Action Loader
+  uses: InVisionApp/private-action-loader@v3
+  with:
+    # Access token with read access to the repo containing action
+    pal-repo-token: 
+    # The organization/user and repo where action is stored, with support for @ref
+    pal-repo-name: 
+    # The optional path to directory containing action.  Useful when multiple private actions are stored in the same repo
+    pal-action-directory: # optional
